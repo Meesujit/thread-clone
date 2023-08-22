@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { profileTabs } from "@/constants";
 
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs";
 
 import { fetchUser } from "@/lib/actions/user.actions";
 import ProfileHeader from "@/app/components/shared/ProfileHeader";

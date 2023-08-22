@@ -1,10 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import { fetchUser, getActivity} from "@/lib/actions/user.actions";
-import Link from "next/link";
-import Image from "next/image";
 
-
+import { fetchUser, getActivity } from "@/lib/actions/user.actions";
 
 async function Page() {
   const user = await currentUser();
@@ -13,18 +12,18 @@ async function Page() {
   const userInfo = await fetchUser(user.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
 
-  // GetActiviy 
   const activity = await getActivity(userInfo._id);
 
-    return (
-      <section >
-        <h1 className="head-text mb-10"> Activity </h1>
-          <section className="mt-10 flex-col gap-5">
-            {activity.length > 0 ?(
-              <>
-              {activity.map((activity) => (
-                <Link key={activity._id} href={`/thread/${activity.parentId }`}>
-                 <article className='activity-card'>
+  return (
+    <>
+      <h1 className='head-text'>Activity</h1>
+
+      <section className='mt-10 flex flex-col gap-5'>
+        {activity.length > 0 ? (
+          <>
+            {activity.map((activity) => (
+              <Link key={activity._id} href={`/thread/${activity.parentId}`}>
+                <article className='activity-card'>
                   <Image
                     src={activity.author.image}
                     alt='user_logo'
@@ -39,14 +38,15 @@ async function Page() {
                     replied to your thread
                   </p>
                 </article>
-                </Link>
-              ))}
-              </>
-            ): <p className=" !text-base-regular text-light-3">No Activity yet</p>}
-          </section>
-        
+              </Link>
+            ))}
+          </>
+        ) : (
+          <p className='!text-base-regular text-light-3'>No activity yet</p>
+        )}
       </section>
-    )
-  }
-  
-  export default Page
+    </>
+  );
+}
+
+export default Page;
