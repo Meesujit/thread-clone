@@ -1,22 +1,20 @@
-🤖 Introduction
+# Introduction
 Build a full stack Threads clone using Next.js 14+ with a redesigned look transformed from a Figma design, user interaction to community management, technical implementation, and various features, including nested deep comments, notifications, real-time-search, and more.
 
 If you're getting started and need assistance or face any bugs, join our active Discord community with over 27k+ members. It's a place where people help each other out.
+# ⚙️ Tech Stack
+- Next.js
+- MongoDB
+- Shadcn UI
+- TailwindCSS
+- Clerk
+- Webhooks
+- Serverless APIs
+- React Hook Form
+- Zod
+- TypeScript
 
-
-
-⚙️ Tech Stack
-Next.js
-MongoDB
-Shadcn UI
-TailwindCSS
-Clerk
-Webhooks
-Serverless APIs
-React Hook Form
-Zod
-TypeScript
-🔋 Features
+# 🔋 Features
 👉 Authentication: Authentication using Clerk for email, password, and social logins (Google and GitHub) with a comprehensive profile management system.
 
 👉 Visually Appealing Home Page: A visually appealing home page showcasing the latest threads for an engaging user experience.
@@ -64,52 +62,3 @@ TypeScript
 👉 Form Management with React Hook Form: Efficient management of forms with React Hook Form for a streamlined user input experience.
 
 and many more, including code architecture and reusability
-
-🤸 Quick Start
-Follow these steps to set up the project locally on your machine.
-
-Prerequisites
-
-Make sure you have the following installed on your machine:
-
-Git
-Node.js
-npm (Node Package Manager)
-Cloning the Repository
-
-git clone https://github.com/adrianhajdin/threads.git
-cd threads
-Installation
-
-Install the project dependencies using npm:
-
-npm install
-Set Up Environment Variables
-
-Create a new file named .env in the root of your project and add the following content:
-
-MONGODB_URL=
-CLERK_SECRET_KEY=
-UPLOADTHING_SECRET=
-UPLOADTHING_APP_ID=
-NEXT_CLERK_WEBHOOK_SECRET=
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-Replace the placeholder values with your actual credentials. You can obtain these credentials by signing up for the corresponding websites on MongoDB, Clerk, and Uploadthing.
-
-Running the Project
-
-npm run dev
-Open http://localhost:3000 in your browser to view the project.
-
-🕸️ Snippets
-clerk.route.ts
-community.actions.ts
-CommunityCard.tsx
-constants.index.ts
-globals.css
-next.config.js
-tailwind.config.js
-thread.actions.ts
-uploadthing.ts
-user.actions.ts
-utils.ts
